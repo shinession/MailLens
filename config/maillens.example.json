@@ -1,0 +1,36 @@
+{
+  "postgres": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "database": "maillens",
+    "user": "maillens",
+    "password": "",
+    "sslmode": "disable",
+    "schema": "maillens"
+  },
+  "outlook": {
+    "stores": ["mailbox", "pst"],
+    "exclude_folders": [],
+    "start_if_needed": false
+  },
+  "sync": {
+    "interval_minutes": 10,
+    "pause_ms": 0,
+    "body_max_chars": 2000000,
+    "batch_size": 50,
+    "mirror_deletions": true,
+    "mass_delete_percent": 10,
+    "mass_delete_min": 1000
+  },
+  "web": {
+    "listen": "127.0.0.1:8765",
+    "page_size": 50
+  },
+  "search": {
+    "max_candidates": 5000
+  },
+  "log": {
+    "dir": "logs",
+    "level": "info"
+  }
+}

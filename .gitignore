@@ -1,0 +1,23 @@
+# Build output
+/bin/
+/dist/
+*.exe
+
+# Local configuration (host specific, holds the database password). Only the *.example.json templates are tracked.
+/config/*
+!/config/*.example.json
+
+# Runtime data and logs
+/logs/
+*.log
+
+# Go test artifacts
+*.test
+*.out
+coverage.*
+
+# Editors and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

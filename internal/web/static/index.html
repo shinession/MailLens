@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MailLens</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <h1 class="brand">MailLens</h1>
+    <form id="search-form" class="search" autocomplete="off">
+      <div class="search-row">
+        <input id="q" name="q" type="search" aria-label="Search" autofocus
+               placeholder="Search your mail: words, &quot;an exact phrase&quot;, -excluded, a OR b">
+        <button type="submit">Search</button>
+      </div>
+      <details id="filters" class="filters">
+        <summary>Filters</summary>
+        <div class="filter-grid">
+          <label>From <input id="from" type="text" placeholder="name or address"></label>
+          <label>Since <input id="since" type="date"></label>
+          <label>Until <input id="until" type="date"></label>
+          <label>Folder <select id="folder"><option value="">All folders</option></select></label>
+          <label>Sort
+            <select id="sort">
+              <option value="relevance">Relevance</option>
+              <option value="date">Newest first</option>
+            </select>
+          </label>
+          <label class="check"><input id="attach" type="checkbox"> Has attachments</label>
+        </div>
+      </details>
+    </form>
+  </header>
+
+  <main>
+    <p id="summary" class="muted" role="status"></p>
+    <ol id="results" class="results"></ol>
+    <nav id="pager" class="pager" hidden>
+      <button id="prev" type="button">Previous</button>
+      <span id="pageno"></span>
+      <button id="next" type="button">Next</button>
+    </nav>
+  </main>
+
+  <footer id="status" class="muted"></footer>
+
+  <aside id="viewer" class="viewer" hidden aria-label="Message">
+    <div class="viewer-bar">
+      <a id="open-outlook" class="button" href="#">Open in Outlook</a>
+      <button id="close-viewer" type="button">Close</button>
+    </div>
+    <h2 id="v-subject"></h2>
+    <dl id="v-meta" class="meta-list"></dl>
+    <p id="v-note" class="muted" hidden></p>
+    <pre id="v-body" class="body"></pre>
+  </aside>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
